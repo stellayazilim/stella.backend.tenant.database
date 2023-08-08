@@ -8,4 +8,5 @@ CREATE TABLE IF NOT EXISTS public.products  (
 
 ALTER TABLE IF EXISTS
     public.products
-    ADD COLUMN "brand" VARCHAR(56)  DEFAULT "Brand" NOT NULL;
+    ADD COLUMN "brand"
+        VARCHAR(56) NOT NULL DEFAULT Brand;
