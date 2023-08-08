@@ -8,12 +8,13 @@ CREATE TABLE IF NOT EXISTS public.products  (
 
 ALTER TABLE IF EXISTS
     public.products
-    ADD COLUMN "brand"
-        VARCHAR(56) NOT NULL DEFAULT Brand;
+    ADD COLUMN IF NOT EXISTS  "brand"
+    VARCHAR(56) NOT NULL DEFAULT 'Brand';
 
 
 ALTER TABLE IF EXISTS
     public.products
-    ADD COLUMN "slug" VARCHAR(32) GENERATED ALWAYS AS ( name ) STORED;
+    ADD COLUMN IF NOT EXISTS "slug"
+    VARCHAR(32) GENERATED ALWAYS AS ( name ) STORED;
 
 
