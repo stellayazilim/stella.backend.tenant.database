@@ -10,3 +10,10 @@ ALTER TABLE IF EXISTS
     public.products
     ADD COLUMN "brand"
         VARCHAR(56) NOT NULL DEFAULT Brand;
+
+
+ALTER TABLE IF EXISTS
+    public.products
+    ADD COLUMN "slug" VARCHAR(32) GENERATED ALWAYS AS ( name ) STORED;
+
+
