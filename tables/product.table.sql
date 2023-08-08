@@ -17,4 +17,5 @@ ALTER TABLE IF EXISTS
     ADD COLUMN IF NOT EXISTS "slug"
     VARCHAR(32) GENERATED ALWAYS AS ( name ) STORED;
 
-
+-- Convert primary key bigserial from smallserial
+ALTER TABLE IF EXISTS "public"."products" DROP COLUMN  "id" CASCADE , ADD COLUMN "id" BIGSERIAL NOT NULL PRIMARY KEY ;
